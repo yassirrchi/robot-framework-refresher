@@ -10,11 +10,17 @@ Suite Setup    Log    grat
 
 *** Test Cases ***
 Validate cart page in shopping
+    #Validate login functionality
+    #Fill login
+    #Wait for element is visible     css:.nav-link
+    #Verify Card elements title
+    #Select card     Nokia Edge
+Checking user window for user
     Validate login functionality
-    Fill login
-    Wait for element is visible     css:.nav-link
-    Verify Card elements title
-    Select card     iphone X
+    Fill in user data form
+
+
+
 
 *** Keywords ***
 Validate login functionality
@@ -26,7 +32,6 @@ Validate login functionality
     Call Method    ${options}    add_argument    --incognito
     Create WebDriver    Chrome    options=${options}
     Go To    ${URL}
-    Maximize Browser Window
 Fill login
     input text    id:username   rahulshettyacademy
     input password    id:password   learning
@@ -67,6 +72,16 @@ Select card
     END
 
     click button    xpath:(//button[@class='btn btn-info'][normalize-space()='Add'])[${index}]
-    click button    xpath:(//a[@class='nav-link btn btn-primary'])
+    click link      xpath:(//a[@class='nav-link btn btn-primary'])
     Sleep    10s    # Just to demonstrate
-    git commit -m "⚡️ been a while 7sudo"
+Fill in user data form
+    input text    id:username   rahulshettyacademy
+    input password    id:password   learning
+    click element    css:input[value='user']
+    wait until element is visible       css:#okayBtn
+    click button    css:#okayBtn
+    wait until element is not visible   css:#okayBtn
+    select from list by value    css:select.form-control    teach
+    click element    terms
+    click element    signInBtn
+    Sleep    10s    # Just to demonstrate
