@@ -11,7 +11,7 @@ Suite Setup    Log    grat
 Resource    resource.robot
 Library     Collections
 Test Setup    Open url
-Library    BuiltIn
+Library    String
 
 *** Test Cases ***
 Validate cart page in shopping
