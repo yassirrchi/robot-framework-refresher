@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-05-17T13:54:31.715075" rpa="false" schemaversion="5">
-<suite id="s1" name="TC01" source="C:\Users\asus\PycharmProjects\UdemyRobot\Tests\TC01.robot">
+<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-05-17T15:01:31.062935" rpa="false" schemaversion="5">
+<suite id="s1" name="TC02" source="C:\Users\asus\PycharmProjects\UdemyRobot\Tests\TC02.robot">
 <kw name="Log" owner="BuiltIn" type="SETUP">
-<msg time="2025-05-17T13:54:32.345502" level="INFO">grat</msg>
+<msg time="2025-05-17T15:01:31.592025" level="INFO">grat</msg>
 <arg>grat</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-17T13:54:32.345502" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-17T15:01:31.592025" elapsed="0.000000"/>
 </kw>
-<test id="s1-t1" name="Validate cart page in shopping" line="12">
-<status status="FAIL" start="2025-05-17T13:54:32.345502" elapsed="0.001000">Test cannot be empty.</status>
-</test>
-<test id="s1-t2" name="Checking user window for user" line="18">
-<kw name="Validate login functionality">
+<test id="s1-t1" name="Validate cart page in shopping" line="16">
+<kw name="Open url" owner="resource" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-17T13:54:32.349503" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000027418BA50A0&gt;</msg>
+<msg time="2025-05-17T15:01:31.595024" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E97E78C980&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-17T13:54:32.349503" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-17T15:01:31.594026" elapsed="0.000998"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-17T13:54:32.350502" level="INFO">&amp;{prefs} = { credentials_enable_service=False | profile.password_manager_enabled=False }</msg>
+<msg time="2025-05-17T15:01:31.596026" level="INFO">&amp;{prefs} = { credentials_enable_service=False | profile.password_manager_enabled=False }</msg>
 <var>&amp;{prefs}</var>
 <arg>credentials_enable_service=False</arg>
 <arg>profile.password_manager_enabled=False</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-05-17T13:54:32.350502" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-17T15:01:31.595024" elapsed="0.001002"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
@@ -34,122 +31,112 @@
 <arg>prefs</arg>
 <arg>${prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-17T13:54:32.351509" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-17T15:01:31.596026" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-17T13:54:32.351509" elapsed="0.000994"/>
+<status status="PASS" start="2025-05-17T15:01:31.596026" elapsed="0.000999"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-popup-blocking</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-17T13:54:32.352503" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-17T15:01:31.597025" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-17T13:54:32.352503" elapsed="0.000999"/>
+<status status="PASS" start="2025-05-17T15:01:31.597025" elapsed="0.000999"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:32.353502" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-05-17T15:01:31.598024" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-05-17T13:54:32.353502" elapsed="1.671249"/>
+<status status="PASS" start="2025-05-17T15:01:31.598024" elapsed="1.539923"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:34.024751" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
+<msg time="2025-05-17T15:01:33.137947" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-17T13:54:34.024751" elapsed="0.944046"/>
+<status status="PASS" start="2025-05-17T15:01:33.137947" elapsed="1.060784"/>
 </kw>
-<status status="PASS" start="2025-05-17T13:54:32.348506" elapsed="2.620291"/>
+<status status="PASS" start="2025-05-17T15:01:31.594026" elapsed="2.604705"/>
 </kw>
-<kw name="Fill in user data form">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:34.970796" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
-<arg>id:username</arg>
-<arg>rahulshettyacademy</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T13:54:34.970796" elapsed="0.163998"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:35.135795" level="INFO">Typing password into text field 'id:password'.</msg>
-<msg time="2025-05-17T13:54:35.182795" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>id:password</arg>
-<arg>learning</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T13:54:35.135795" elapsed="0.115999"/>
-</kw>
+<kw name="visit the other">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:35.252797" level="INFO">Clicking element 'css:input[value='user']'.</msg>
-<arg>css:input[value='user']</arg>
+<msg time="2025-05-17T15:01:34.201730" level="INFO">Clicking element 'css:.blinkingText'.</msg>
+<arg>css:.blinkingText</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T13:54:35.252797" elapsed="0.106001"/>
+<status status="PASS" start="2025-05-17T15:01:34.200733" elapsed="0.150993"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:#okayBtn</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-17T13:54:35.358798" elapsed="0.272295"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:35.632085" level="INFO">Clicking button 'css:#okayBtn'.</msg>
-<arg>css:#okayBtn</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T13:54:35.631093" elapsed="0.108242"/>
-</kw>
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>css:#okayBtn</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2025-05-17T13:54:35.740371" elapsed="0.240349"/>
-</kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:35.981721" level="INFO">Selecting options from selection list 'css:select.form-control' by value teach.</msg>
-<arg>css:select.form-control</arg>
-<arg>teach</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-05-17T13:54:35.981721" elapsed="0.108222"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:36.090980" level="INFO">Clicking element 'terms'.</msg>
-<arg>terms</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T13:54:36.089943" elapsed="0.088743"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-17T13:54:36.179689" level="INFO">Clicking element 'signInBtn'.</msg>
-<arg>signInBtn</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T13:54:36.179689" elapsed="0.094402"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>tesssssssssssssssss</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-17T15:01:34.351726" elapsed="0.000999"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-17T13:54:46.275709" level="INFO">Slept 10 seconds.</msg>
-<arg>10s</arg>
+<msg time="2025-05-17T15:01:39.353221" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-17T13:54:36.275100" elapsed="10.000609"/>
+<status status="PASS" start="2025-05-17T15:01:34.352725" elapsed="5.000496"/>
 </kw>
-<status status="PASS" start="2025-05-17T13:54:34.969838" elapsed="11.305871"/>
+<status status="PASS" start="2025-05-17T15:01:34.199768" elapsed="5.153453"/>
 </kw>
-<status status="PASS" start="2025-05-17T13:54:32.347505" elapsed="13.928204"/>
+<kw name="verify that user has switched to the new window">
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-17T15:01:39.354252" elapsed="0.016965"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-17T15:01:39.371217" level="INFO">Verifying element 'css:h1' contains exact text 'DOCUMENTS REQUEST'.</msg>
+<arg>css:h1</arg>
+<arg>DOCUMENTS REQUEST</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-17T15:01:39.371217" elapsed="0.037003"/>
+</kw>
+<status status="PASS" start="2025-05-17T15:01:39.353221" elapsed="0.055997"/>
+</kw>
+<kw name="Grab email test">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>hereeee</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-17T15:01:39.410218" elapsed="0.000061"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-17T15:01:39.436221" level="INFO">${text} = Please email us at mentor@rahulshettyacademy.com with below template to receive response</msg>
+<var>${text}</var>
+<arg>css:.red</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-17T15:01:39.410279" elapsed="0.026938"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-17T15:01:39.437217" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-17T15:01:39.409218" elapsed="0.027999"/>
+</kw>
+<status status="PASS" start="2025-05-17T15:01:31.593025" elapsed="7.845193"/>
 </test>
 <doc>Login Testcase</doc>
-<status status="FAIL" start="2025-05-17T13:54:31.717091" elapsed="14.560759"/>
+<status status="PASS" start="2025-05-17T15:01:31.065936" elapsed="8.373283"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="TC01" id="s1" pass="1" fail="1" skip="0">TC01</stat>
+<stat name="TC02" id="s1" pass="1" fail="0" skip="0">TC02</stat>
 </suite>
 </statistics>
 <errors>
